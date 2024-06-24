@@ -1,0 +1,265 @@
+[
+    {
+        "id": 1,
+        "name": "Start",
+        "prerequisites": [],
+        "unlocked": true,
+        "level": "",
+        "maxLevel": "",
+        "gridPosition": { "row": 1, "column": 2 },
+        "levelCost": [{}, {}]
+    },
+    {
+        "id": 2,
+        "name": "Speed",
+        "prerequisites": [1],
+        "unlocked": true,
+        "level": 0,
+        "maxLevel": 20,
+        "gridPosition": { "row": 2, "column": 2 },
+        "levelCost": [
+            {},
+            { "Hay": 20 },
+            { "Wood": 10 },
+            { "Wood": 50, "Carrot": 100 },
+            { "Wood": 100, "Carrot": 200 },
+            { "Carrot": 350 },
+            { "Carrot": 500 },
+            { "Carrot": 800 },
+            { "Carrot": 1100 },
+            { "Carrot": 1400 },
+            { "Carrot": 1700 },
+            { "Carrot": 2100 },
+            { "Carrot": 2500 },
+            { "Power": 2000 },
+            { "Power": 2600 },
+            { "Power": 3380 },
+            { "Power": 4390 },
+            { "Power": 5710 },
+            { "Power": 7430 },
+            { "Power": 9650 },
+            { "Power": 12500 }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Grass",
+        "prerequisites": [1],
+        "unlocked": true,
+        "level": 0,
+        "maxLevel": 12,
+        "gridPosition": { "row": 2, "column": 3 },
+        "levelCost": [
+            {},
+            { "Hay": 100 },
+            { "Hay": 300 },
+            { "Hay": 450 },
+            { "Hay": 675 },
+            { "Hay": 1010 },
+            { "Hay": 1520 },
+            { "Hay": 2280 },
+            { "Hay": 3420 },
+            { "Hay": 5130 },
+            { "Hay": 7690 },
+            { "Hay": 11500 },
+            { "Hay": 17300 }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Plant",
+        "prerequisites": [2],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 1,
+        "gridPosition": { "row": 3, "column": 1 },
+        "levelCost": [{}, { "Hay": 50 }]
+    },
+    {
+        "id": 5,
+        "name": "Expand",
+        "prerequisites": [2],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 9,
+        "gridPosition": { "row": 3, "column": 2 },
+        "levelCost": [
+            {},
+            { "Hay": 30 },
+            { "Wood": 20 },
+            { "Wood": 50, "Carrot": 50 },
+            { "Wood": 100, "Pumpkin": 200 },
+            { "Pumpkin": 500 },
+            { "Pumpkin": 1750 },
+            { "Pumpkin": 6120 },
+            { "Pumpkin": 21400 },
+            { "Pumpkin": 75000 }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Carrots",
+        "prerequisites": [4],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 12,
+        "gridPosition": { "row": 4, "column": 1 },
+        "levelCost": [
+            {},
+            { "Wood": 100 },
+            { "Wood": 300 },
+            { "Wood": 480 },
+            { "Wood": 768 },
+            { "Wood": 1230 },
+            { "Wood": 1970 },
+            { "Wood": 3150 },
+            { "Wood": 5030 },
+            { "Wood": 8050 },
+            { "Wood": 12900 },
+            { "Wood": 20600 },
+            { "Wood": 33000 }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Trees",
+        "prerequisites": [6],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 12,
+        "gridPosition": { "row": 5, "column": 1 },
+        "levelCost": [
+            {},
+            { "Wood": 50, "Carrot": 200 },
+            { "Hay": 300 },
+            { "Hay": 480 },
+            { "Hay": 768 },
+            { "Hay": 1230 },
+            { "Hay": 1970 },
+            { "Hay": 3150 },
+            { "Hay": 5030 },
+            { "Hay": 8050 },
+            { "Hay": 12900 },
+            { "Hay": 20600 },
+            { "Hay": 33000 }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Sunflowers",
+        "prerequisites": [7],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 6,
+        "gridPosition": { "row": 5, "column": 2 },
+        "levelCost": [
+            {},
+            { "Carrot": 500 },
+            { "Gold": 1000 },
+            { "Gold": 2000 },
+            { "Gold": 4000 },
+            { "Gold": 8000 },
+            { "Gold": 16000 }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Pumpkins",
+        "prerequisites": [5],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 10,
+        "gridPosition": { "row": 3, "column": 3 },
+        "levelCost": [
+            {},
+            { "Wood": 500, "Carrot": 1000 },
+            { "Carrot": 1200 },
+            { "Carrot": 1920 },
+            { "Carrot": 3070 },
+            { "Carrot": 4920 },
+            { "Carrot": 7860 },
+            { "Carrot": 12600 },
+            { "Carrot": 20100 },
+            { "Carrot": 32200 },
+            { "Carrot": 51500 }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Cactus",
+        "prerequisites": [8],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 4,
+        "gridPosition": { "row": 6, "column": 2 },
+        "levelCost": [
+            {},
+            { "Gold": 5000 },
+            { "Gold": 10000 },
+            { "Gold": 20000 },
+            { "Gold": 40000 }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Fertilizer",
+        "prerequisites": [9],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 1,
+        "gridPosition": { "row": 4, "column": 4 },
+        "levelCost": [{}, { "Pumpkin": 1000 }]
+    },
+    {
+        "id": 12,
+        "name": "Dinosaurs",
+        "prerequisites": [10],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 3,
+        "gridPosition": { "row": 6, "column": 1 },
+        "levelCost": [
+            {},
+            { "Cactus": 5000 },
+            { "Cactus": 1000 },
+            { "Cactus": 2000 }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Polyculture",
+        "prerequisites": [9],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 1,
+        "gridPosition": { "row": 4, "column": 2 },
+        "levelCost": [{}, { "Hay, Wood, Carrot": 3000 }]
+    },
+    {
+        "id": 14,
+        "name": "Mazes",
+        "prerequisites": [11],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 5,
+        "gridPosition": { "row": 5, "column": 4 },
+        "levelCost": [
+            {},
+            { "Carrot": 2000, "Pumpkin": 3000 },
+            { "Pumpkin": 4000 },
+            { "Pumpkin": 8000 },
+            { "Pumpkin": 16000 },
+            { "Pumpkin": 32000 }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Leaderboard",
+        "prerequisites": [9],
+        "unlocked": false,
+        "level": 0,
+        "maxLevel": 1,
+        "gridPosition": { "row": 6, "column": 3 },
+        "levelCost": [{}, { "Bones": 2000 }]
+    }
+]

@@ -1,0 +1,17 @@
+# Ignore compiled files
+*.class
+*.jar
+*.war
+Unlocks_Data.py
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+.vs/
+*.suo
+slnx.sqlite
+node_modules/
+
+# Ignore logs
+logs/
+*.log
