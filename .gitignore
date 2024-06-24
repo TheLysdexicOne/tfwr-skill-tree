@@ -3,6 +3,7 @@
 *.jar
 *.war
 Unlocks_Data.py
+.prettierrc
 
 # Ignore IDE-specific files
 .idea/
