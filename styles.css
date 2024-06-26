@@ -26,17 +26,27 @@ body {
 }
 
 #treeContainer {
-    position: absolute;
-    width: 69em;
-    height: 934px;
+    display: flex;
+    position: relative;
     padding: 10px;
-    align-items: center;
-    justify-content: center;
+    width: max-content;
+    height: max-content;
     margin: 5px 0;
     font-weight: 600;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 8px;
+}
+
+#skillTree {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    border-radius: 8px;
+    padding: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
     background-color: #333;
 }
 
@@ -46,25 +56,44 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+#skillEffects {
+    margin-left: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 5px;
+    border-radius: 8px;
+    padding: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: #333;
+}
+
+#resetButton {
+    grid-column-start: 4;
+    grid-row-start: 4;
+    height: 50%;
+    width: 50%;
+    transform: translateX(100%);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #6b6b6b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     z-index: 1;
 }
 
-.skillLine {
-    stroke: #8b8b8b;
-    stroke-width: 2;
+#resetButton:hover {
+    background-color: #632209;
 }
 
-#skillTree {
-    position: absolute;
-    display: grid;
-    width: 69em;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 50px;
-
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-}
 /* Basic style for each skill */
 .skill {
     display: flex;
@@ -83,60 +112,59 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    /* no select */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    /* min and max box sizes*/
-    width: 215;
+    /* height, width */
+    width: 195px;
     height: 80px;
+    z-index: 1;
 }
 
-/* Style for unlocked skills */
+.skillLine {
+    stroke: #8b8b8b;
+    stroke-width: 2;
+}
+
+.skill:hover,
+.skillEffect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skillEffect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    text-align: center;
+    vertical-align: middle;
+    font: 18px "Source Code Pro";
+    font-weight: 600;
+    color: #000000;
+    margin: 5px 0;
+    background-color: #c68646;
+    border: 2px solid #ff9933;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    /* height, width */
+    width: 160px;
+}
+
+.skillEffect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 .unlocked {
     color: #ffffff; /* White text for unlocked skills */
     font-weight: 600;
     border-color: #0bc70b; /* Green border for unlocked skills */
     background-color: #467535; /* Light green background */
 }
-/* Hover effect for skills */
-.skill:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-/* Style for the skill name and level */
-.skill > strong {
-    font-size: 16px;
-    color: #333;
-}
-
-/* Description style */
-.skill > p {
-    font-size: 14px;
-    color: #666;
-    margin-top: 5px;
-}
-
-#resetButton {
-    grid-column-start: 4;
-    grid-row-start: 4;
-    height: 50%;
-    width: 50%;
-    transform: translateX(100%);
-    text-align: center;
-    vertical-align: middle;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #6b6b6b;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#resetButton:hover {
-    background-color: #632209;
+.noselect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

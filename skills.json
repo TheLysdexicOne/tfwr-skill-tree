@@ -165,7 +165,7 @@
     {
         "id": 9,
         "name": "Pumpkins",
-        "prerequisites": [5],
+        "prerequisites": [2, 5],
         "unlocked": false,
         "level": 0,
         "maxLevel": 10,
@@ -228,7 +228,7 @@
     {
         "id": 13,
         "name": "Polyculture",
-        "prerequisites": [9],
+        "prerequisites": [2, 5, 9],
         "unlocked": false,
         "level": 0,
         "maxLevel": 1,

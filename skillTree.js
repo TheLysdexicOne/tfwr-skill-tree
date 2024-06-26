@@ -25,16 +25,19 @@ function displaySkills() {
     skills.forEach((skill) => {
         if (skill.prerequisites && skill.prerequisites.length > 0) {
             const highestPrerequisiteId = Math.max(...skill.prerequisites);
-            const prerequisiteSkill = skills.find((s) => s.id === highestPrerequisiteId);
+            const prerequisiteSkill = skills.find(
+                (s) => s.id === highestPrerequisiteId
+            );
             drawConnectors(skill, prerequisiteSkill);
         }
     });
+    displaySkillEffects();
 }
 
 function renderSkillElement(skill) {
     const skillTreeElement = document.getElementById("skillTree");
     const skillElement = document.createElement("div");
-    skillElement.classList.add("skill");
+    skillElement.classList.add("skill","noselect");
 
     // Check if all prerequisites are met
     const prerequisitesMet = skill.prerequisites.every((prerequisiteId) => {
@@ -118,6 +121,8 @@ function renderSkillElement(skill) {
 function addResetButton() {
     // Check if the reset button already exists
     let resetButton = document.getElementById("resetButton");
+    const resetElement = document.createElement("div");
+    resetElement.classList.add("noselect");
     if (!resetButton) {
         // If it doesn't exist, create it
         resetButton = document.createElement("button");
@@ -222,4 +227,56 @@ function drawLine(svg, x1, y1, x2, y2) {
     line.setAttribute("y2", y2);
     line.setAttribute("class", "skillLine");
     svg.appendChild(line);
+}
+
+function displaySkillEffects() {
+    const skillEffectsElement = document.getElementById("skillEffects");
+    skillEffectsElement.innerHTML = ""; // Clear existing skill effects
+    const skillsWithEffects = [
+        "Speed",
+        "Grass",
+        "Expand",
+        "Pumpkins",
+        "Carrots",
+        "Trees",
+        "Sunflowers",
+        "Mazes",
+        "Dinosaurs",
+        "Cactus",
+    ];
+    skills
+        .filter((skill) => skillsWithEffects.includes(skill.name))
+        .forEach((skill) => {
+            const effectElement = document.createElement("div");
+            effectElement.classList.add("skillEffect","noselect");
+
+            let effectText;
+            if (skill.name === "Expand") {
+                // Custom progression for Expand
+                const expandProgression = {
+                    0: "1x1",
+                    1: "1x3",
+                    2: "3x3",
+                    3: "4x4",
+                    4: "5x5",
+                    5: "6x6",
+                    6: "7x7",
+                    7: "8x8",
+                    8: "9x9",
+                    9: "10x10",
+                };
+                effectText = `Expand<br>${
+                    expandProgression[skill.level] ||
+                    `${skill.level}x${skill.level}`
+                }`;
+            } else {
+                // Default progression for other skills
+                effectText = `${skill.name}<br>${skill.level * 100}%`;
+            }
+            if (skill.level > 0) {
+                effectElement.classList.add("unlocked");
+            }
+            effectElement.innerHTML = effectText;
+            skillEffectsElement.appendChild(effectElement);
+        });
 }
