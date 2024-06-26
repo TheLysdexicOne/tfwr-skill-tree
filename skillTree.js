@@ -1,4 +1,4 @@
-import skills from "./skills.json" assert { type: "json" };
+import skills from "./skills.json" with { type: "json" };
 
 document.addEventListener("DOMContentLoaded", (event) => {
     const skillTreeElement = document.getElementById("skillTree");
@@ -23,12 +23,11 @@ function displaySkills() {
 
     // Draw lines after all skills are placed
     skills.forEach((skill) => {
-        skill.prerequisites.forEach((prerequisiteId) => {
-            const prerequisiteSkill = skills.find(
-                (s) => s.id === prerequisiteId
-            );
+        if (skill.prerequisites && skill.prerequisites.length > 0) {
+            const highestPrerequisiteId = Math.max(...skill.prerequisites);
+            const prerequisiteSkill = skills.find((s) => s.id === highestPrerequisiteId);
             drawConnectors(skill, prerequisiteSkill);
-        });
+        }
     });
 }
 
@@ -102,7 +101,8 @@ function renderSkillElement(skill) {
                 if (
                     dependentSkill.prerequisites.includes(skill.id) &&
                     dependentSkill.name !== "Speed" &&
-                    dependentSkill.name !== "Grass"
+                    dependentSkill.name !== "Grass" &&
+                    skill.level < 1
                 ) {
                     dependentSkill.level = 0;
                     dependentSkill.unlocked = false;

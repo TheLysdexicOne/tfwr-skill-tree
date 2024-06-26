@@ -99,7 +99,7 @@
     {
         "id": 6,
         "name": "Carrots",
-        "prerequisites": [4],
+        "prerequisites": [2, 4],
         "unlocked": false,
         "level": 0,
         "maxLevel": 12,
@@ -123,7 +123,7 @@
     {
         "id": 7,
         "name": "Trees",
-        "prerequisites": [6],
+        "prerequisites": [2, 4, 6],
         "unlocked": false,
         "level": 0,
         "maxLevel": 12,
@@ -147,7 +147,7 @@
     {
         "id": 8,
         "name": "Sunflowers",
-        "prerequisites": [7],
+        "prerequisites": [2, 4, 6, 7],
         "unlocked": false,
         "level": 0,
         "maxLevel": 6,
@@ -187,7 +187,7 @@
     {
         "id": 10,
         "name": "Cactus",
-        "prerequisites": [8],
+        "prerequisites": [2, 4, 6, 7, 8],
         "unlocked": false,
         "level": 0,
         "maxLevel": 4,
@@ -203,7 +203,7 @@
     {
         "id": 11,
         "name": "Fertilizer",
-        "prerequisites": [9],
+        "prerequisites": [2, 5, 9],
         "unlocked": false,
         "level": 0,
         "maxLevel": 1,
@@ -213,7 +213,7 @@
     {
         "id": 12,
         "name": "Dinosaurs",
-        "prerequisites": [10],
+        "prerequisites": [2, 4, 6, 7, 8, 10],
         "unlocked": false,
         "level": 0,
         "maxLevel": 3,
@@ -238,7 +238,7 @@
     {
         "id": 14,
         "name": "Mazes",
-        "prerequisites": [11],
+        "prerequisites": [2, 5, 9, 11],
         "unlocked": false,
         "level": 0,
         "maxLevel": 5,
@@ -255,7 +255,7 @@
     {
         "id": 15,
         "name": "Leaderboard",
-        "prerequisites": [9],
+        "prerequisites": [2, 5, 9],
         "unlocked": false,
         "level": 0,
         "maxLevel": 1,
